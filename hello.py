@@ -1,4 +1,5 @@
 import cherrypy
+import os
 
 class OnePage(object):
 	def index(self):
@@ -14,8 +15,9 @@ class Root:
 	onepage = OnePage()
 
 	def index(self):
-		html = open("index.html", "r").read()
+		html = open("static\index.html", "r").read()
 		return html
 	index.exposed = True
 
+cherrypy.config.update("hello.config")
 cherrypy.quickstart(Root())
