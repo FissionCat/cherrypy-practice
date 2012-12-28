@@ -1,5 +1,6 @@
 import cherrypy
 import os
+import database
 
 class OnePage(object):
 	def index(self):
@@ -23,5 +24,4 @@ class Root:
 		return html
 	index.exposed = True
 
-cherrypy.config.update("hello.config")
-cherrypy.quickstart(Root())
+cherrypy.quickstart(Root(), config="hello.config")

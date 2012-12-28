@@ -11,17 +11,22 @@
 			<div class="navbar-inner">
 				<a class="brand" href="">Python</a>
 				<ul class="nav">
-					<li><a href="#">A thing</a></li>
+					<li><a href="/onepage">A thing</a></li>
 				</ul>
 			</div>
 		</div>
 		<!-- End of navbar -->
-		<h1>Home</h1>
-		<form action="/signup" method="post">
-			<legend>Sign up here</legend>
-			<input type="text" placeholder="Username" name="username" required>
-			<input type="password" name="password" required>
-			<button type="submit" class="btn">Submit</button>
-		</form>
+		<div class="container">
+			<h1>Home</h1>
+			<form action="/signup" method="post">
+				<fieldset>
+					<legend>Sign up here</legend>
+					<input type="text" placeholder="Full name" name="fullname" required>
+					<input type="text" placeholder="Username" name="username" required>
+					<input type="password" name="password" required>
+					<button type="submit" class="btn">Submit</button>
+				</fieldset>
+			</form>
+		</div>
 	</body>
 </html>
