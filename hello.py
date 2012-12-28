@@ -7,7 +7,7 @@ top = open(os.path.join("static", "top.html"), "r").read()
 bottom = open(os.path.join("static", "bottom.html"), "r").read()
 
 class AllUsers(object):
-	def index(self):
+	def index(self, username=None):
 		tableText = "<div class=\"container\">\n\
 			<table class=\"table\">\n\
 				<thead>\n\
@@ -19,10 +19,16 @@ class AllUsers(object):
 				</thead>\n\
 				<tbody>\n"
 		session = Session()
-		for user in session.query(User).order_by(User.id):
-			tableText += ("<tr>\n<td>" + user.fullname + "</td>\n" +
-			"<td>" + user.username + "</td>\n" +
-			"<td>" + user.password + "</td>\n</tr>\n")
+		if username == None:
+			for user in session.query(User).order_by(User.id):
+				tableText += ("<tr>\n<td>" + user.fullname + "</td>\n" +
+				"<td>" + user.username + "</td>\n" +
+				"<td>" + user.password + "</td>\n</tr>\n")
+		else:
+			for user in session.query(User).filter(User.username.like("%"+username+"%")).order_by(User.id):
+				tableText += ("<tr>\n<td>" + user.fullname + "</td>\n" +
+				"<td>" + user.username + "</td>\n" +
+				"<td>" + user.password + "</td>\n</tr>\n")
 
 		tableText += "</tbody>\n</table>\n"
 		session.close()
