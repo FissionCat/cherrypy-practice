@@ -11,11 +11,15 @@ class OnePage(object):
 	index.exposed = True
 	thing.exposed = True
 
+class Signup(object):
+	def index(self):
+		pass
+
 class Root:
 	onepage = OnePage()
 
 	def index(self):
-		html = open("static\index.html", "r").read()
+		html = open(os.path.join("static", "index.html"), "r").read()
 		return html
 	index.exposed = True
 

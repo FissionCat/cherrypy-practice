@@ -6,6 +6,7 @@
 		<script src="static/js/bootstrap.min.js"></script>
 	</head>
 	<body>
+		<!-- Navbar -->
 		<div class="navbar">
 			<div class="navbar-inner">
 				<a class="brand" href="">Python</a>
@@ -14,6 +15,13 @@
 				</ul>
 			</div>
 		</div>
-		<p>Hello!</p>
+		<!-- End of navbar -->
+		<h1>Home</h1>
+		<form action="/signup" method="post">
+			<legend>Sign up here</legend>
+			<input type="text" placeholder="Username" name="username" required>
+			<input type="password" name="password" required>
+			<button type="submit" class="btn">Submit</button>
+		</form>
 	</body>
 </html>
