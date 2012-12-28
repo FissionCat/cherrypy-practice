@@ -39,6 +39,8 @@ class Signup(object):
 			session.commit()
 			session.close()
 
+		raise cherrypy.HTTPRedirect("/")
+
 	index.exposed = True
 
 class Root:
@@ -48,7 +50,7 @@ class Root:
 	def index(self):
 		html = open(os.path.join("static", "index.html"), "r").read()
 		return top + html + bottom
-		
+
 	index.exposed = True
 
 cherrypy.quickstart(Root(), config="hello.config")
