@@ -1,7 +1,10 @@
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
+Session = sessionmaker()
 engine = create_engine("postgresql+pg8000://postgres:master@localhost/cherrypy", echo=True)
+Session.configure(bind=engine)
 Base = declarative_base()
 
 class User(Base):
