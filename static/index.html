@@ -1,12 +1,26 @@
 		<div class="container">
 			<h1>Home</h1>
-			<form action="/signup/" method="POST">
-				<fieldset>
-					<legend>Sign up here</legend>
-					<input type="text" placeholder="Full name" name="fullname" required>
-					<input type="text" placeholder="Username" name="username" required>
-					<input type="password" placeholder="Password" name="password" required>
-					<button type="submit" class="btn">Submit</button>
-				</fieldset>
+			<form class="form-horizontal" action="/signup/" method="POST">
+				<legend>Sign up here</legend>
+				<div class="control-group">
+					<div class="controls">
+						<input type="text" placeholder="Full name" name="fullname" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<input type="text" placeholder="Username" name="username" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<input type="password" placeholder="Password" name="password" required>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn">Submit</button>
+					</div>
+				</div>
 			</form>
 		</div>
